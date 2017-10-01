@@ -1,0 +1,25 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}Section edit{% endblock %}
+{% block body %}
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <div class="col-md-1">
+        <div class="row">
+            <button class="btn btn-default" type="submit" /><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</button>
+        </div>
+    </div>
+    {{ form_end(edit_form) }}
+
+    <div class="col-md-1">
+        <a class="btn btn-default" href="{{ path('sectionmenu_index') }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to the list</a>
+    </div>
+
+    {{ form_start(delete_form) }}
+    <div class="row">
+        <div class="col-md-2 pull-right text-right">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </div>
+    </div>
+    {{ form_end(delete_form) }}
+{% endblock %}

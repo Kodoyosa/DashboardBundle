@@ -1,0 +1,15 @@
+main_front_itemmenu:
+    resource: "@KodoDashboardBundle/Resources/config/routing/itemmenu.yml"
+    prefix:   /itemmenu
+
+main_front_sectionmenu:
+    resource: "@KodoDashboardBundle/Resources/config/routing/sectionmenu.yml"
+    prefix:   /sectionmenu
+
+main_front_general:
+    resource: "@KodoDashboardBundle/Resources/config/routing/general.yml"
+    prefix:   /general
+
+kodo_dashboard_homepage:
+    path:     /
+    defaults: { _controller: KodoDashboardBundle:Default:index }

@@ -1,0 +1,23 @@
+{% block extends %}
+{{ "{% extends '@MainFrontBundle/Resources/views/base.html.twig' %}" }}
+{% endblock extends %}
+
+{{  "{% block sectiontitle %}" }}{{ entity_singularized|capitalize }} edit{{ "{% endblock %}" }}
+
+{% block body %}
+
+{{ "{% block body %}" }}
+    {{ '{{ form_start(edit_form) }}' }}
+    {{ '{{ form_widget(edit_form) }}' }}
+    <div class="col-md-1">
+        <div class="row">
+            <button class="btn btn-default" type="submit" /><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</button>
+        </div>
+    </div>
+    {{ '{{ form_end(edit_form) }}' }}
+
+    {% set hide_edit, hide_delete = true, false %}
+    {{ include('crud/views/others/record_actions.html.twig.twig') -}}
+{{ "{% endblock %}" }}
+
+{% endblock body %}

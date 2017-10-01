@@ -1,0 +1,15 @@
+{% block extends %}
+{{ "{% extends '@MainFrontBundle/Resources/views/base.html.twig' %}" }}
+{% endblock extends %}
+
+{{  "{% block sectiontitle %}" }}{{ entity_singularized|capitalize }} creation{{ "{% endblock %}" }}
+{% block body %}
+{{ "{% block body %}" }}
+    {{ '{{ form_start(form) }}' }}
+        {{ '{{ form_widget(form) }}' }}
+        <input type="submit" class="btn btn-primary" value="Create" />
+        {% set hide_edit, hide_delete = true, true %}
+        {{ include('crud/views/others/record_actions.html.twig.twig') -}}
+    {{ '{{ form_end(form) }}' }}
+{{ "{% endblock %}" }}
+{% endblock body %}

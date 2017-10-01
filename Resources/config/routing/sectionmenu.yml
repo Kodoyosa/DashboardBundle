@@ -1,0 +1,24 @@
+sectionmenu_index:
+    path:     /
+    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:index" }
+    methods:  GET
+
+sectionmenu_show:
+    path:     /{id}/show
+    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:show" }
+    methods:  GET
+
+sectionmenu_new:
+    path:     /new
+    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:new" }
+    methods:  [GET, POST]
+
+sectionmenu_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:edit" }
+    methods:  [GET, POST]
+
+sectionmenu_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:delete" }
+    methods:  DELETE

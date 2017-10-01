@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% stylesheets
+    '@bootstrap_css'
+    '@KodoDashboardBundle/Resources/public/css/main.css'
+    %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+<nav id="topnav" class="navbar navbar-inverse bg-inverse">
+    <a class="navbar-brand" href="{{ path('kodo_dashboard_homepage') }}">{{ appName }}</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 leftbarmenu">
+            {% set currentPath = app.request.attributes.get('_route') %}
+
+            {{ render(controller('KodoDashboardBundle:Default:sidemenu', {'route': currentPath})) }}
+
+
+        </div>
+        <div class="col-10 pagecontent">
+            <h1 class="page-header">{% block sectiontitle %}Dashboard{% endblock %}</h1>
+
+            <div class="container-fluid">
+
+
+                {% block body %}{% endblock %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{#<div class="container-fluid">
+    <div class="row">
+
+        {{ render(controller('KodoDashboardBundle:Default:sidemenu')) }}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">{% block sectiontitle %}Dashboard{% endblock %}</h1>
+
+            <div class="container-fluid">
+
+                {% block body %}{% endblock %}
+
+            </div>
+
+        </div>
+    </div>
+</div>#}
+
+{% javascripts
+'@KodoDashboardBundle/Resources/public/js/jquery-3.2.1.min.js'
+'@KodoDashboardBundle/Resources/public/js/tether.min.js'
+'@bootstrap_js'
+'@KodoDashboardBundle/Resources/public/js/main.js'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</body>
+</html>

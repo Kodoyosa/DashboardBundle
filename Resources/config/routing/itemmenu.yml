@@ -1,0 +1,24 @@
+itemmenu_index:
+    path:     /
+    defaults: { _controller: "KodoDashboardBundle:Itemmenu:index" }
+    methods:  GET
+
+itemmenu_show:
+    path:     /{id}/show
+    defaults: { _controller: "KodoDashboardBundle:Itemmenu:show" }
+    methods:  GET
+
+itemmenu_new:
+    path:     /new
+    defaults: { _controller: "KodoDashboardBundle:Itemmenu:new" }
+    methods:  [GET, POST]
+
+itemmenu_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KodoDashboardBundle:Itemmenu:edit" }
+    methods:  [GET, POST]
+
+itemmenu_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KodoDashboardBundle:Itemmenu:delete" }
+    methods:  DELETE

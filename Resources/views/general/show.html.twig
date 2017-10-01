@@ -1,0 +1,27 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}General{% endblock %}
+{% block body %}
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id :</th>
+                <td>{{ general.id }}</td>
+            </tr>
+            <tr>
+                <th>Title :</th>
+                <td>{{ general.title }}</td>
+            </tr>
+            <tr>
+                <th>Active :</th>
+                <td>{% if general.active %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('general_index') }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to the list</a>
+    <a class="btn btn-default" href="{{ path('general_edit', { 'id': general.id }) }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</a>
+    {{ form_start(delete_form, {'attr' : {'class': 'col-md-4 pull-right text-right'}}) }}
+    <button type="submit" class="btn btn-danger">Delete</button>
+
+{% endblock %}

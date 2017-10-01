@@ -1,0 +1,36 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}Item : {{ itemmenu.name }}{% endblock %}
+{% block body %}
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ itemmenu.id }}</td>
+            </tr>
+            <tr>
+                <th>itemmenuid</th>
+                <td>{{ itemmenu.sectionmenuId }}</td>
+            </tr>
+            <tr>
+                <th>Routename</th>
+                <td>{{ itemmenu.routename }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ itemmenu.name }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{% if itemmenu.active %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('itemmenu_index') }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to the list</a>
+    <a class="btn btn-default" href="{{ path('itemmenu_edit', { 'id': itemmenu.id }) }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</a>
+    {{ form_start(delete_form, {'attr' : {'class': 'col-md-4 pull-right text-right'}}) }}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    {{ form_end(delete_form) }}
+    
+{% endblock %}

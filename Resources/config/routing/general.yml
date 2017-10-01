@@ -1,0 +1,24 @@
+general_index:
+    path:     /
+    defaults: { _controller: "KodoDashboardBundle:General:index" }
+    methods:  GET
+
+general_show:
+    path:     /{id}/show
+    defaults: { _controller: "KodoDashboardBundle:General:show" }
+    methods:  GET
+
+general_new:
+    path:     /new
+    defaults: { _controller: "KodoDashboardBundle:General:new" }
+    methods:  [GET, POST]
+
+general_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KodoDashboardBundle:General:edit" }
+    methods:  [GET, POST]
+
+general_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KodoDashboardBundle:General:delete" }
+    methods:  DELETE

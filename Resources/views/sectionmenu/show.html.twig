@@ -1,0 +1,32 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}Section : {{ sectionmenu.title }}{% endblock %}
+{% block body %}
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sectionmenu.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ sectionmenu.title }}</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>{{ sectionmenu.position }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{% if sectionmenu.active %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-default" href="{{ path('sectionmenu_index') }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to the list</a>
+    <a class="btn btn-default" href="{{ path('sectionmenu_edit', { 'id': sectionmenu.id }) }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</a>
+    {{ form_start(delete_form, {'attr' : {'class': 'col-md-4 pull-right text-right'}}) }}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    {{ form_end(delete_form) }}
+
+{% endblock %}

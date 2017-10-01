@@ -1,0 +1,25 @@
+Kodo\DashboardBundle\Entity\Itemmenu:
+    type: entity
+    table: kdb_itemmenu
+    repositoryClass: Kodo\DashboardBundle\Repository\ItemmenuRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        sectionmenuId:
+            targetEntity: Sectionmenu
+            type: integer
+            joinColumn:
+                name: sectionmenu_id
+        routename:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        active:
+            type: boolean
+    lifecycleCallbacks: {  }

@@ -1,0 +1,19 @@
+Kodo\DashboardBundle\Entity\Sectionmenu:
+    type: entity
+    table: kdb_sectionmenu
+    repositoryClass: Kodo\DashboardBundle\Repository\SectionmenuRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        position:
+            type: integer
+        active:
+            type: boolean
+    lifecycleCallbacks: {  }

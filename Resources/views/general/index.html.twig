@@ -1,0 +1,35 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}Generals list{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="container-fluid">
+            <a href="{{ path('general_new') }}" class="btn btn-primary">Create a new general</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for general in generals %}
+            <tr>
+                <td><a href="{{ path('general_show', { 'id': general.id }) }}">{{ general.id }}</a></td>
+                <td>{{ general.title }}</td>
+                <td>{% if general.active %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ path('general_show', { 'id': general.id }) }}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> show</a>
+
+                    <a class="btn btn-default" href="{{ path('general_edit', { 'id': general.id }) }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

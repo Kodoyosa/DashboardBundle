@@ -1,0 +1,21 @@
+
+    <a class="btn btn-default" href="{{ "{{ path('" ~ route_name_prefix ~ "_index') }}" }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to the list</a>
+
+
+    {%- if ('edit' in actions) and (not hide_edit) %}
+
+        <a class="btn btn-default" href="{{ "{{ path('" ~ route_name_prefix ~ "_edit', { '"~ identifier ~"': " ~ entity_singularized ~ "."~ identifier ~" }) }}" }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit</a>
+
+    {%- endif %}
+
+    {%- if ('delete' in actions) and (not hide_delete) %}
+
+        {{ '{{ form_start(delete_form) }}' }}
+        <div class="row">
+            <div class="col-md-2 pull-right text-right">
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </div>
+        </div>
+        {{ '{{ form_end(delete_form) }}' }}
+
+    {%- endif %}

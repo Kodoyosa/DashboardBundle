@@ -1,0 +1,10 @@
+{% extends '@KodoDashboardBundle/Resources/views/base.html.twig' %}
+
+{% block sectiontitle %}Section creation{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-primary" value="Create" />
+        <a href="{{ path('sectionmenu_index') }}" class="btn btn-default">Back to the list</a>
+    {{ form_end(form) }}
+{% endblock %}

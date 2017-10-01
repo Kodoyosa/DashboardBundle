@@ -1,0 +1,6 @@
+services:
+    kodo_dashboard.twig.appname_extension:
+            class: Kodo\DashboardBundle\Twig\AppnameExtension
+            arguments: ["@doctrine.orm.entity_manager"]
+            tags:
+                - { name: twig.extension }

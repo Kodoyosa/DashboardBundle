@@ -1,0 +1,17 @@
+Kodo\DashboardBundle\Entity\General:
+    type: entity
+    table: kdb_general
+    repositoryClass: Kodo\DashboardBundle\Repository\GeneralRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        active:
+            type: boolean
+    lifecycleCallbacks: {  }
