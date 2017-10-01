@@ -38,13 +38,11 @@
 
             {{ render(controller('KodoDashboardBundle:Default:sidemenu', {'route': currentPath})) }}
 
-
         </div>
         <div class="col-10 pagecontent">
             <h1 class="page-header">{% block sectiontitle %}Dashboard{% endblock %}</h1>
 
             <div class="container-fluid">
-
 
                 {% block body %}{% endblock %}
 
@@ -53,26 +51,6 @@
         </div>
     </div>
 </div>
-
-
-
-{#<div class="container-fluid">
-    <div class="row">
-
-        {{ render(controller('KodoDashboardBundle:Default:sidemenu')) }}
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">{% block sectiontitle %}Dashboard{% endblock %}</h1>
-
-            <div class="container-fluid">
-
-                {% block body %}{% endblock %}
-
-            </div>
-
-        </div>
-    </div>
-</div>#}
 
 {% javascripts
 '@KodoDashboardBundle/Resources/public/js/jquery-3.2.1.min.js'
