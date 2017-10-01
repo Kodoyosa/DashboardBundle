@@ -14,10 +14,5 @@
   "support": {
     "issues": "https://github.com/Kodoyosa/dashboard/issues"
   },
-  "license": "MIT",
-  "extra": {
-    "branch-alias": {
-      "dev-master": "v1.0.1"
-    }
-  }
+  "license": "MIT"
 }
