@@ -1,2 +1,2 @@
 
-Copyright (C) 2017 Guillaume Morel
+The MIT License (MIT)

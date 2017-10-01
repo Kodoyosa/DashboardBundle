@@ -1,0 +1,23 @@
+{
+  "name": "kodoyosa/dashboard",
+  "description": "Simple dashboard",
+  "keywords": [
+    "dashboard",
+    "symfony3"
+  ],
+  "authors": [
+    {
+      "name": "Guillaume Morel",
+      "email": "kodoyosa@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Kodoyosa/dashboard/issues"
+  },
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "v1.0.1"
+    }
+  }
+}
