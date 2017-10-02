@@ -5,10 +5,9 @@
   "keywords": [
     "dashboard",
     "administration",
-    "symfony3",
-    "symfony-bundle",
     "admin",
-    "panel"
+    "panel",
+    "kodoyosa"
   ],
   "authors": [
     {
@@ -17,9 +16,9 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": ">=5.5.9",
     "symfony/symfony": "3.3.*",
-    "symfony/assetic-bundle": "~2.8",
+    "symfony/assetic-bundle": "^2.8",
     "twbs/bootstrap": "4.0.0-alpha.6"
   },
   "autoload": {
