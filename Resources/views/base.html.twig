@@ -5,7 +5,7 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% stylesheets
     '@bootstrap_css'
-    '@KodoDashboardBundle/Resources/public/css/main.css'
+    '@KodoyosaDashboardBundle/Resources/public/css/main.css'
     %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
     {% endstylesheets %}
@@ -36,7 +36,7 @@
         <div class="col-2 leftbarmenu">
             {% set currentPath = app.request.attributes.get('_route') %}
 
-            {{ render(controller('KodoDashboardBundle:Default:sidemenu', {'route': currentPath})) }}
+            {{ render(controller('KodoyosaDashboardBundle:Default:sidemenu', {'route': currentPath})) }}
 
         </div>
         <div class="col-10 pagecontent">
@@ -53,10 +53,10 @@
 </div>
 
 {% javascripts
-'@KodoDashboardBundle/Resources/public/js/jquery-3.2.1.min.js'
-'@KodoDashboardBundle/Resources/public/js/tether.min.js'
+'@KodoyosaDashboardBundle/Resources/public/js/jquery-3.2.1.min.js'
+'@KodoyosaDashboardBundle/Resources/public/js/tether.min.js'
 '@bootstrap_js'
-'@KodoDashboardBundle/Resources/public/js/main.js'
+'@KodoyosaDashboardBundle/Resources/public/js/main.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}

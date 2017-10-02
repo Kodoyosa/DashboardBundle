@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Twig;
+namespace Kodoyosa\DashboardBundle\Twig;
 
 use Doctrine\ORM\EntityManager;
 
@@ -17,7 +17,7 @@ class AppnameExtension extends \Twig_Extension implements \Twig_Extension_Global
     public function getGlobals()
     {
         $appName = $this->em
-            ->getRepository('KodoDashboardBundle:General')
+            ->getRepository('KodoyosaDashboardBundle:General')
             ->findOneBy(['active' => true]);
 
         if($appName != null)

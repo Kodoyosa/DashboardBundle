@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Repository;
+namespace Kodoyosa\DashboardBundle\Repository;
 
 /**
  * GeneralRepository

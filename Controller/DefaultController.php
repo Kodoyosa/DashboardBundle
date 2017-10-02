@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Controller;
+namespace Kodoyosa\DashboardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,7 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('KodoDashboardBundle:Default:index.html.twig');
+        return $this->render('KodoyosaDashboardBundle:Default:index.html.twig');
     }
 
     public function sidemenuAction($route)
@@ -16,12 +16,12 @@ class DefaultController extends Controller
         $router = $this->container->get('router');
 
         $sections = $this->getDoctrine()
-            ->getRepository('KodoDashboardBundle:Sectionmenu')
+            ->getRepository('KodoyosaDashboardBundle:Sectionmenu')
             ->getSectionmenus();
 
         foreach($sections as &$section){
             $items = $this->getDoctrine()
-                ->getRepository('KodoDashboardBundle:Itemmenu')
+                ->getRepository('KodoyosaDashboardBundle:Itemmenu')
                 ->getItemsbySectionId($section);
 
 
@@ -49,7 +49,7 @@ class DefaultController extends Controller
         var_dump($sections);die();*/
 
         return $this->render(
-            'KodoDashboardBundle:Default:sidemenu.html.twig',
+            'KodoyosaDashboardBundle:Default:sidemenu.html.twig',
             [
                 'sections' => $sections,
                 'route' => $route

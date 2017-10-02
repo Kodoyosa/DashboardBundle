@@ -1,7 +1,7 @@
 <?php
 
-namespace Kodo\DashboardBundle\Repository;
-use Kodo\DashboardBundle\Entity\Sectionmenu;
+namespace Kodoyosa\DashboardBundle\Repository;
+use Kodoyosa\DashboardBundle\Entity\Sectionmenu;
 
 /**
  * ItemmenuRepository
@@ -15,7 +15,7 @@ class ItemmenuRepository extends \Doctrine\ORM\EntityRepository
     {
         $em = $this->getEntityManager();
         $result = $em
-            ->getRepository('KodoDashboardBundle:Itemmenu')
+            ->getRepository('KodoyosaDashboardBundle:Itemmenu')
             ->findby(['sectionmenuId' => $sectionmenu]);
         return $result;
     }

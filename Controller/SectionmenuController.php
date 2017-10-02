@@ -1,8 +1,8 @@
 <?php
 
-namespace Kodo\DashboardBundle\Controller;
+namespace Kodoyosa\DashboardBundle\Controller;
 
-use Kodo\DashboardBundle\Entity\Sectionmenu;
+use Kodoyosa\DashboardBundle\Entity\Sectionmenu;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -20,9 +20,9 @@ class SectionmenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $sectionmenus = $em->getRepository('KodoDashboardBundle:Sectionmenu')->findAll();
+        $sectionmenus = $em->getRepository('KodoyosaDashboardBundle:Sectionmenu')->findAll();
 
-        return $this->render('KodoDashboardBundle:sectionmenu:index.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:sectionmenu:index.html.twig', array(
             'sectionmenus' => $sectionmenus,
         ));
     }
@@ -34,7 +34,7 @@ class SectionmenuController extends Controller
     public function newAction(Request $request)
     {
         $sectionmenu = new Sectionmenu();
-        $form = $this->createForm('Kodo\DashboardBundle\Form\SectionmenuType', $sectionmenu);
+        $form = $this->createForm('Kodoyosa\DashboardBundle\Form\SectionmenuType', $sectionmenu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -45,7 +45,7 @@ class SectionmenuController extends Controller
             return $this->redirectToRoute('sectionmenu_show', array('id' => $sectionmenu->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:sectionmenu:new.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:sectionmenu:new.html.twig', array(
             'sectionmenu' => $sectionmenu,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class SectionmenuController extends Controller
     {
         $deleteForm = $this->createDeleteForm($sectionmenu);
 
-        return $this->render('KodoDashboardBundle:sectionmenu:show.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:sectionmenu:show.html.twig', array(
             'sectionmenu' => $sectionmenu,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -72,7 +72,7 @@ class SectionmenuController extends Controller
     public function editAction(Request $request, Sectionmenu $sectionmenu)
     {
         $deleteForm = $this->createDeleteForm($sectionmenu);
-        $editForm = $this->createForm('Kodo\DashboardBundle\Form\SectionmenuType', $sectionmenu);
+        $editForm = $this->createForm('Kodoyosa\DashboardBundle\Form\SectionmenuType', $sectionmenu);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -81,7 +81,7 @@ class SectionmenuController extends Controller
             return $this->redirectToRoute('sectionmenu_edit', array('id' => $sectionmenu->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:sectionmenu:edit.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:sectionmenu:edit.html.twig', array(
             'sectionmenu' => $sectionmenu,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

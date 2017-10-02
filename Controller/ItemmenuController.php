@@ -1,8 +1,8 @@
 <?php
 
-namespace Kodo\DashboardBundle\Controller;
+namespace Kodoyosa\DashboardBundle\Controller;
 
-use Kodo\DashboardBundle\Entity\Itemmenu;
+use Kodoyosa\DashboardBundle\Entity\Itemmenu;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,7 +21,7 @@ class ItemmenuController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $itemmenus = $em->getRepository('KodoDashboardBundle:Itemmenu')->findAll();
+        $itemmenus = $em->getRepository('KodoyosaDashboardBundle:Itemmenu')->findAll();
 
 
         /*$router = $this->container->get('router');
@@ -38,7 +38,7 @@ class ItemmenuController extends Controller
             var_dump('oui');die();
         }*/
 
-        return $this->render('KodoDashboardBundle:itemmenu:index.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:itemmenu:index.html.twig', array(
             'itemmenus' => $itemmenus,
         ));
     }
@@ -50,12 +50,12 @@ class ItemmenuController extends Controller
     public function newAction(Request $request)
     {
         $sectionmenu = $this->getDoctrine()
-            ->getRepository('KodoDashboardBundle:Sectionmenu')
+            ->getRepository('KodoyosaDashboardBundle:Sectionmenu')
             ->findBy([],['position' => 'ASC']);
 
         $itemmenu = new Itemmenu($sectionmenu);
 
-        $form = $this->createForm('Kodo\DashboardBundle\Form\ItemmenuType', $itemmenu);
+        $form = $this->createForm('Kodoyosa\DashboardBundle\Form\ItemmenuType', $itemmenu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -66,7 +66,7 @@ class ItemmenuController extends Controller
             return $this->redirectToRoute('itemmenu_show', array('id' => $itemmenu->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:itemmenu:new.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:itemmenu:new.html.twig', array(
             'itemmenu' => $itemmenu,
             'form' => $form->createView(),
         ));
@@ -80,7 +80,7 @@ class ItemmenuController extends Controller
     {
         $deleteForm = $this->createDeleteForm($itemmenu);
 
-        return $this->render('KodoDashboardBundle:itemmenu:show.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:itemmenu:show.html.twig', array(
             'itemmenu' => $itemmenu,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -93,13 +93,13 @@ class ItemmenuController extends Controller
     public function editAction(Request $request, Itemmenu $itemmenu)
     {
         $sectionmenu = $this->getDoctrine()
-            ->getRepository('KodoDashboardBundle:Sectionmenu')
+            ->getRepository('KodoyosaDashboardBundle:Sectionmenu')
             ->findBy([],['position' => 'ASC']);
 
         $itemmenu->sectionmenu = $sectionmenu;
 
         $deleteForm = $this->createDeleteForm($itemmenu);
-        $editForm = $this->createForm('Kodo\DashboardBundle\Form\ItemmenuType', $itemmenu);
+        $editForm = $this->createForm('Kodoyosa\DashboardBundle\Form\ItemmenuType', $itemmenu);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -108,7 +108,7 @@ class ItemmenuController extends Controller
             return $this->redirectToRoute('itemmenu_edit', array('id' => $itemmenu->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:itemmenu:edit.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:itemmenu:edit.html.twig', array(
             'itemmenu' => $itemmenu,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -1,24 +1,24 @@
 sectionmenu_index:
     path:     /
-    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:index" }
+    defaults: { _controller: "KodoyosaDashboardBundle:Sectionmenu:index" }
     methods:  GET
 
 sectionmenu_show:
     path:     /{id}/show
-    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:show" }
+    defaults: { _controller: "KodoyosaDashboardBundle:Sectionmenu:show" }
     methods:  GET
 
 sectionmenu_new:
     path:     /new
-    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:new" }
+    defaults: { _controller: "KodoyosaDashboardBundle:Sectionmenu:new" }
     methods:  [GET, POST]
 
 sectionmenu_edit:
     path:     /{id}/edit
-    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:edit" }
+    defaults: { _controller: "KodoyosaDashboardBundle:Sectionmenu:edit" }
     methods:  [GET, POST]
 
 sectionmenu_delete:
     path:     /{id}/delete
-    defaults: { _controller: "KodoDashboardBundle:Sectionmenu:delete" }
+    defaults: { _controller: "KodoyosaDashboardBundle:Sectionmenu:delete" }
     methods:  DELETE

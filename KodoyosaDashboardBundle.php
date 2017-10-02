@@ -1,15 +1,15 @@
 <?php
 
-namespace Kodo\DashboardBundle;
+namespace Kodoyosa\DashboardBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class KodoDashboardBundle extends Bundle
+class KodoyosaDashboardBundle extends Bundle
 {
     public function appName()
     {
         $appName = $this->getDoctrine()
-            ->getRepository('KodoDashboardBundle:General')
+            ->getRepository('KodoyosaDashboardBundle:General')
             ->findOneBy(['active' => true]);
 
         if($appName != null)

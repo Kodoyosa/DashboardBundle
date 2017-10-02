@@ -1,7 +1,7 @@
-Kodo\DashboardBundle\Entity\General:
+Kodoyosa\DashboardBundle\Entity\General:
     type: entity
     table: kdb_general
-    repositoryClass: Kodo\DashboardBundle\Repository\GeneralRepository
+    repositoryClass: Kodoyosa\DashboardBundle\Repository\GeneralRepository
     id:
         id:
             type: integer

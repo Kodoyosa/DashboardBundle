@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Entity;
+namespace Kodoyosa\DashboardBundle\Entity;
 
 /**
  * Sectionmenu

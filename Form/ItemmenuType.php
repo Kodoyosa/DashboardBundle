@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Form;
+namespace Kodoyosa\DashboardBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -40,7 +40,7 @@ class ItemmenuType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Kodo\DashboardBundle\Entity\Itemmenu'
+            'data_class' => 'Kodoyosa\DashboardBundle\Entity\Itemmenu'
         ));
     }
 

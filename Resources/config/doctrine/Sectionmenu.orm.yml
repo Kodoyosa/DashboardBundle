@@ -1,7 +1,7 @@
-Kodo\DashboardBundle\Entity\Sectionmenu:
+Kodoyosa\DashboardBundle\Entity\Sectionmenu:
     type: entity
     table: kdb_sectionmenu
-    repositoryClass: Kodo\DashboardBundle\Repository\SectionmenuRepository
+    repositoryClass: Kodoyosa\DashboardBundle\Repository\SectionmenuRepository
     id:
         id:
             type: integer

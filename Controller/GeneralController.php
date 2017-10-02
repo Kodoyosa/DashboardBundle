@@ -1,8 +1,8 @@
 <?php
 
-namespace Kodo\DashboardBundle\Controller;
+namespace Kodoyosa\DashboardBundle\Controller;
 
-use Kodo\DashboardBundle\Entity\General;
+use Kodoyosa\DashboardBundle\Entity\General;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -20,9 +20,9 @@ class GeneralController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $generals = $em->getRepository('KodoDashboardBundle:General')->findAll();
+        $generals = $em->getRepository('KodoyosaDashboardBundle:General')->findAll();
 
-        return $this->render('KodoDashboardBundle:general:index.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:general:index.html.twig', array(
             'generals' => $generals,
         ));
     }
@@ -34,7 +34,7 @@ class GeneralController extends Controller
     public function newAction(Request $request)
     {
         $general = new General();
-        $form = $this->createForm('Kodo\DashboardBundle\Form\GeneralType', $general);
+        $form = $this->createForm('Kodoyosa\DashboardBundle\Form\GeneralType', $general);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -45,7 +45,7 @@ class GeneralController extends Controller
             return $this->redirectToRoute('general_show', array('id' => $general->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:general:new.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:general:new.html.twig', array(
             'general' => $general,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class GeneralController extends Controller
     {
         $deleteForm = $this->createDeleteForm($general);
 
-        return $this->render('KodoDashboardBundle:general:show.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:general:show.html.twig', array(
             'general' => $general,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -72,7 +72,7 @@ class GeneralController extends Controller
     public function editAction(Request $request, General $general)
     {
         $deleteForm = $this->createDeleteForm($general);
-        $editForm = $this->createForm('Kodo\DashboardBundle\Form\GeneralType', $general);
+        $editForm = $this->createForm('Kodoyosa\DashboardBundle\Form\GeneralType', $general);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -81,7 +81,7 @@ class GeneralController extends Controller
             return $this->redirectToRoute('general_edit', array('id' => $general->getId()));
         }
 
-        return $this->render('KodoDashboardBundle:general:edit.html.twig', array(
+        return $this->render('KodoyosaDashboardBundle:general:edit.html.twig', array(
             'general' => $general,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

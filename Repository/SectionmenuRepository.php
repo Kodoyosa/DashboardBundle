@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodo\DashboardBundle\Repository;
+namespace Kodoyosa\DashboardBundle\Repository;
 
 /**
  * SectionmenuRepository
@@ -14,7 +14,7 @@ class SectionmenuRepository extends \Doctrine\ORM\EntityRepository
     {
         $em = $this->getEntityManager();
         $result = $em
-            ->getRepository('KodoDashboardBundle:Sectionmenu')
+            ->getRepository('KodoyosaDashboardBundle:Sectionmenu')
             ->findBy([], ['position' => 'ASC']);
         return $result;
     }
