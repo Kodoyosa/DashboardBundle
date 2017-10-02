@@ -1,6 +1,7 @@
 {
-  "name": "kodoyosa/dashboard",
+  "name": "kodoyosa/dashboard-bundle",
   "description": "Simple dashboard",
+  "type": "symfony-bundle",
   "keywords": [
     "dashboard",
     "administration",
@@ -22,8 +23,12 @@
     "symfony/assetic-bundle": "~2.8",
     "twbs/bootstrap": "4.0.0-alpha.6"
   },
+  "autoload": {
+    "psr-4": { "Kodoyosa\\DashboardBundle\\": "" }
+  },
+  "minimum-stability": "dev",
   "support": {
-    "issues": "https://github.com/Kodoyosa/dashboard/issues"
+    "issues": "https://github.com/Kodoyosa/dashboard-bundle/issues"
   },
   "license": "MIT"
 }
