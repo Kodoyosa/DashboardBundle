@@ -19,7 +19,6 @@
   "require": {
     "php": ">=7.0",
     "symfony/symfony": "3.3.*",
-    "doctrine/orm": ">=2.2.3",
     "symfony/assetic-bundle": "~2.8",
     "twbs/bootstrap": "4.0.0-alpha.6"
   },
