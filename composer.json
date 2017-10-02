@@ -31,7 +31,7 @@
     "branch-alias": {
       "dev-master": "v1.0.x"
     }
-  }
+  },
   "support": {
     "issues": "https://github.com/Kodoyosa/dashboard-bundle/issues"
   },
