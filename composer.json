@@ -25,13 +25,5 @@
     "psr-4": { "Kodoyosa\\DashboardBundle\\": "" }
   },
   "minimum-stability": "dev",
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    }
-  },
-  "support": {
-    "issues": "https://github.com/Kodoyosa/dashboard-bundle/issues"
-  },
   "license": "MIT"
 }
