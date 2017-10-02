@@ -1,25 +1,32 @@
-KodoyosaDashboardBundle
+DashboardBundle
 =========
 
 Dashboard Bundle for symfony >= 3.3
 
+This bundle will require symfony/assetic-bundle
+symfony's document for assetic : https://symfony.com/doc/current/assetic/asset_management.html
+
+*this bundle also require Twitter Bootstrap v4 currently at its beta version. alpha6 version must be used for the moment. Tether.js is currently used in this bundle version (simple update of the bundle version later will give possibility to used Bootstrap4 beta and above)*
+
 ####Requirements :
-
-(for both following requirements, see 3. for configuration example)
-
-* Assetic bundle :
-    http://symfony.com/doc/current/assetic/asset_management.html
     
 * twbs/bootstrap 4.0.0-alpha.6
-
     * add `"twbs/bootstrap": "4.0.0-alpha.6"` to your composer.json
     * then run `composer update`
 
-####Steps :
 
-1) `php bin/console doctrine:schema:update --force`
+####Installation :
+1) `composer require kodoyosa/dashboard`
 
-2) Assetic configuration in config.yml
+2) add `new Kodoyosa\DashboardBundle\KodoyosaDashboardBundle(),` to $bundles[] in registerBundles() from app/AppKernel.php
+
+3) call the routing in app/config/routing.yml. Basically you can add :
+    
+        kodo_dashboard:
+            resource: "@KodoyosaDashboardBundle/Resources/config/routing.yml"
+            prefix:   /dashboard
+
+4) Assetic configuration in app/config/config.yml to get access to `bootstrap_js` and `bootstrap_css`
     
         # Assetic Configuration
         assetic:
@@ -35,7 +42,8 @@ Dashboard Bundle for symfony >= 3.3
                         - '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-grid.min.css'
                         - '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-reboot.min.css'
                         
-3) run `php bin/console assetic:dump
-`
+5) Update database schema : `php bin/console doctrine:schema:update --force`
 
-4) (optionnal) Change `prefix:   /` in /app/config/routing.yml for the Dashboard 
+6) run : `php bin/console assetic:dump
+
+*That's it !*
