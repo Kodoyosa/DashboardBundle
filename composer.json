@@ -3,7 +3,11 @@
   "description": "Simple dashboard",
   "keywords": [
     "dashboard",
-    "symfony3"
+    "administration",
+    "symfony3",
+    "symfony-bundle",
+    "admin",
+    "panel"
   ],
   "authors": [
     {
@@ -11,6 +15,13 @@
       "email": "kodoyosa@gmail.com"
     }
   ],
+  "require": {
+    "php": ">=5.5.9",
+    "symfony/symfony": "3.3.*",
+    "doctrine/orm": "^2.2.3",
+    "symfony/assetic-bundle": "~2.8",
+    "twbs/bootstrap": "4.0.0-alpha.6"
+  },
   "support": {
     "issues": "https://github.com/Kodoyosa/dashboard/issues"
   },
