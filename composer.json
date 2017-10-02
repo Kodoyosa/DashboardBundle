@@ -24,6 +24,6 @@
   "autoload": {
     "psr-4": { "Kodoyosa\\DashboardBundle\\": "" }
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "MIT"
 }
