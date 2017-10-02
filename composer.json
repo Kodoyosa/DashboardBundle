@@ -17,16 +17,21 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
+    "php": ">=7.0",
     "symfony/symfony": "3.3.*",
-    "doctrine/orm": "^2.2.3",
+    "doctrine/orm": ">=2.2.3",
     "symfony/assetic-bundle": "~2.8",
     "twbs/bootstrap": "4.0.0-alpha.6"
   },
   "autoload": {
     "psr-4": { "Kodoyosa\\DashboardBundle\\": "" }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
   "support": {
     "issues": "https://github.com/Kodoyosa/dashboard-bundle/issues"
   },
