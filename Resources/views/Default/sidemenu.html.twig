@@ -1,26 +1,24 @@
-<nav id="sidemenu" class="navbar navbar-inverse bg-inverse">
-    {% if sections %}
-        {% for section in sections %}
-            {% if section.active == 1 %}
-                <p class="section_sidemenu">{{ section.title }}</p>
-                <nav class="nav nav-pills flex-column">
-                    {% for item in section.items %}
-                        {% if item.active == 1 %}
-                            <a class="nav-link {% if item.routename == route %}active{% endif %}" href="{{ path(item.routename) }}">{{ item.name }}</a>
-                        {% endif %}
-                    {% endfor %}
-                </nav>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
+<nav id="sidemenu" class="navbar navbar-dark bg-dark">
+    <nav class="nav nav-pills flex-column" id="menu">
+        {% if sections %}
+            {% for section in sections %}
+                {% if section.active == 1 %}
+                    <p class="section_sidemenu">{{ section.title }}</p>
+                        {% for item in section.items %}
+                            {% if item.active == 1 %}
+                                <a class="nav-link {% if item.routename == route %}active{% endif %}" href="{{ path(item.routename) }}">{{ item.name }}</a>
+                            {% endif %}
+                        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
-    <p class="section_sidemenu">Parameters</p>
-    <nav class="nav nav-pills flex-column">
+        <p class="section_sidemenu">Parameters</p>
         <a class="nav-link {% if 'general_index' == route %}active{% endif %}" href="{{ path('general_index') }}">General</a>
-        <a class="nav-link" href="#">Menu</a>
-        <nav class="nav nav-pills flex-column">
-            <a class="nav-link ml-3 my-1 {% if 'sectionmenu_index' == route %}active{% endif %}" href="{{ path('sectionmenu_index') }}">Sections</a>
-            <a class="nav-link ml-3 my-1 {% if 'itemmenu_index' == route %}active{% endif %}" href="{{ path('itemmenu_index') }}">Items</a>
-        </nav>
+        <a class="nav-link dropdown-toggle" href="#">Menu</a>
+        <ul class="dropdown-list" href="#">
+            <li><a class="nav-link {% if 'sectionmenu_index' == route %}active{% endif %}" href="{{ path('sectionmenu_index') }}">Sections</a></li>
+            <li><a class="nav-link {% if 'itemmenu_index' == route %}active{% endif %}" href="{{ path('itemmenu_index') }}">Items</a></li>
+        </ul>
     </nav>
 </nav>

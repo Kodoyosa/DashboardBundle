@@ -11,6 +11,13 @@ class DefaultController extends Controller
         return $this->render('KodoyosaDashboardBundle:Default:index.html.twig');
     }
 
+    /**
+     * @param $route
+     * @return \Symfony\Component\HttpFoundation\Response
+     * building of the left side menu
+     * returns array sections : Contains en array of sections and items
+     * returns string route : route name of the current url
+     */
     public function sidemenuAction($route)
     {
         $router = $this->container->get('router');
@@ -36,17 +43,6 @@ class DefaultController extends Controller
 
             $section->items = $items;
         }
-
-
-
-
-
-        /*foreach($sections as $key => &$itemmenu) {
-            if ($router->getRouteCollection()->get($itemmenu->getRoutename()) === null) {
-                unset($sections[$key]);
-            }
-        }
-        var_dump($sections);die();*/
 
         return $this->render(
             'KodoyosaDashboardBundle:Default:sidemenu.html.twig',

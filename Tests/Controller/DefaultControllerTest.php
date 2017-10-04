@@ -10,8 +10,21 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/dashboard/');
+
+        $this->assertContains('Dashboard', $client->getResponse()->getContent());
 
         $this->assertContains('Hello World', $client->getResponse()->getContent());
     }
+
+    public function testSidemenu()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/dashboard/' );
+
+        $this->assertGreaterThan(0, $crawler->filter('nav#sidemenu')->count());
+
+    }
+
 }

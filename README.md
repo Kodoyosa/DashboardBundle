@@ -6,12 +6,10 @@ Dashboard Bundle for symfony >= 3.3
 This bundle will require symfony/assetic-bundle
 symfony's document for assetic : https://symfony.com/doc/current/assetic/asset_management.html
 
-*this bundle also require Twitter Bootstrap v4 currently at its beta version. alpha6 version must be used for the moment. Tether.js is currently used in this bundle version (simple update of the bundle version later will give possibility to used Bootstrap4 beta and above)*
-
 ####Requirements :
     
-* twbs/bootstrap 4.0.0-alpha.6
-    * add `"twbs/bootstrap": "4.0.0-alpha.6"` to your composer.json
+* twbs/bootstrap 4.0.0-beta
+    * add `"twbs/bootstrap": "4.0.0-beta"` to your composer.json
     * then run `composer update`
 
 
@@ -20,7 +18,7 @@ symfony's document for assetic : https://symfony.com/doc/current/assetic/asset_m
 
 2) add `new Kodoyosa\DashboardBundle\KodoyosaDashboardBundle(),` to $bundles[] in registerBundles() from app/AppKernel.php
 
-3) call the routing in app/config/routing.yml. Basically you can add :
+3) call the routes in app/config/routing.yml. Basically you can add :
     
         kodo_dashboard:
             resource: "@KodoyosaDashboardBundle/Resources/config/routing.yml"
@@ -35,6 +33,7 @@ symfony's document for assetic : https://symfony.com/doc/current/assetic/asset_m
             assets:
                 bootstrap_js:
                     inputs:
+                        - '%kernel.root_dir%/../vendor/twbs/bootstrap/assets/js/vendor/popper.min.js'
                         - '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.js'
                 bootstrap_css:
                     inputs:

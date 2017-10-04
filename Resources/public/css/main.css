@@ -11,6 +11,16 @@
     border-radius: 0;
 }
 
+#sidemenu #menu {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#sidemenu li {
+    list-style-type: none;
+}
+
 #sidemenu nav a {
     color: #aaa;
 }
